@@ -3,21 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 42;
+	objectVersion = 45;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		057AAA610D45DDDA00BA2718 /* structures.h in Headers */ = {isa = PBXBuildFile; fileRef = 057AAA600D45DDDA00BA2718 /* structures.h */; };
 		32A4FEBC0562C75700D090E7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C167DFE841241C02AAC07 /* InfoPlist.strings */; };
 		32A4FEBE0562C75700D090E7 /* pt_deny_attach.c in Sources */ = {isa = PBXBuildFile; fileRef = 1A224C3CFF42312311CA2CB7 /* pt_deny_attach.c */; settings = {ATTRIBUTES = (); }; };
+		A9CEB902113C3BFE00C761A6 /* structures.h in Headers */ = {isa = PBXBuildFile; fileRef = A9CEB901113C3BFE00C761A6 /* structures.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		057AAA600D45DDDA00BA2718 /* structures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = structures.h; sourceTree = "<group>"; };
-		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1A224C3CFF42312311CA2CB7 /* pt_deny_attach.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = pt_deny_attach.c; sourceTree = "<group>"; };
-		32A4FEC30562C75700D090E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Info.plist; sourceTree = "<group>"; };
+		32A4FEC30562C75700D090E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32A4FEC40562C75800D090E7 /* pt_deny_attach.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pt_deny_attach.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9CEB901113C3BFE00C761A6 /* structures.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = structures.h; sourceTree = "<group>"; };
 		D27513B306A6225300ADB3A4 /* Kernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Kernel.framework; path = /System/Library/Frameworks/Kernel.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
@@ -63,8 +63,8 @@
 		247142CAFF3F8F9811CA285C /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				A9CEB901113C3BFE00C761A6 /* structures.h */,
 				1A224C3CFF42312311CA2CB7 /* pt_deny_attach.c */,
-				057AAA600D45DDDA00BA2718 /* structures.h */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -76,7 +76,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				057AAA610D45DDDA00BA2718 /* structures.h in Headers */,
+				A9CEB902113C3BFE00C761A6 /* structures.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,15 +85,13 @@
 /* Begin PBXNativeTarget section */
 		32A4FEB80562C75700D090E7 /* pt_deny_attach */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 051434120D45D8DD00400B7B /* Build configuration list for PBXNativeTarget "pt_deny_attach" */;
+			buildConfigurationList = 1DEB91C308733DAC0010E9CD /* Build configuration list for PBXNativeTarget "pt_deny_attach" */;
 			buildPhases = (
-				32A4FEB90562C75700D090E7 /* ShellScript */,
 				32A4FEBA0562C75700D090E7 /* Headers */,
 				32A4FEBB0562C75700D090E7 /* Resources */,
 				32A4FEBD0562C75700D090E7 /* Sources */,
 				32A4FEBF0562C75700D090E7 /* Frameworks */,
 				32A4FEC00562C75700D090E7 /* Rez */,
-				32A4FEC10562C75700D090E7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -110,8 +108,8 @@
 /* Begin PBXProject section */
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = 051434110D45D8DD00400B7B /* Build configuration list for PBXProject "pt_deny_attach" */;
-			compatibilityVersion = "Xcode 2.4";
+			buildConfigurationList = 1DEB91C708733DAC0010E9CD /* Build configuration list for PBXProject "pt_deny_attach" */;
+			compatibilityVersion = "Xcode 3.1";
 			hasScannedForEncodings = 1;
 			mainGroup = 089C166AFE841209C02AAC07 /* pt_deny_attach */;
 			projectDirPath = "";
@@ -143,27 +141,6 @@
 		};
 /* End PBXRezBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		32A4FEB90562C75700D090E7 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "script=\"${SYSTEM_DEVELOPER_DIR}/ProjectBuilder Extras/Kernel Extension Support/KEXTPreprocess\";\nif [ -x \"$script\" ]; then\n    . \"$script\"\nfi";
-		};
-		32A4FEC10562C75700D090E7 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "script=\"${SYSTEM_DEVELOPER_DIR}/ProjectBuilder Extras/Kernel Extension Support/KEXTPostprocess\";\nif [ -x \"$script\" ]; then\n    . \"$script\"\nfi";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		32A4FEBD0562C75700D090E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -187,31 +164,14 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		0514340B0D45D8DD00400B7B /* Development */ = {
+		1DEB91C408733DAC0010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-			};
-			name = Development;
-		};
-		0514340C0D45D8DD00400B7B /* Deployment */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Deployment;
-		};
-		0514340D0D45D8DD00400B7B /* Default */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-			};
-			name = Default;
-		};
-		0514340E0D45D8DD00400B7B /* Development */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
@@ -219,33 +179,17 @@
 				MODULE_START = pt_deny_attach_start;
 				MODULE_STOP = pt_deny_attach_stop;
 				MODULE_VERSION = 1.0.0d1;
-				OPTIMIZATION_CFLAGS = "-O0";
 				PRODUCT_NAME = pt_deny_attach;
 				WRAPPER_EXTENSION = kext;
-				ZERO_LINK = YES;
 			};
-			name = Development;
+			name = Debug;
 		};
-		0514340F0D45D8DD00400B7B /* Deployment */ = {
+		1DEB91C508733DAC0010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				COPY_PHASE_STRIP = YES;
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
-				INFOPLIST_FILE = Info.plist;
-				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
-				MODULE_NAME = com.yourcompany.kext.pt_deny_attach;
-				MODULE_START = pt_deny_attach_start;
-				MODULE_STOP = pt_deny_attach_stop;
-				MODULE_VERSION = 1.0.0d1;
-				PRODUCT_NAME = pt_deny_attach;
-				WRAPPER_EXTENSION = kext;
-				ZERO_LINK = NO;
-			};
-			name = Deployment;
-		};
-		051434100D45D8DD00400B7B /* Default */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = "$(SYSTEM_LIBRARY_DIR)/Extensions";
 				MODULE_NAME = com.yourcompany.kext.pt_deny_attach;
@@ -255,30 +199,54 @@
 				PRODUCT_NAME = pt_deny_attach;
 				WRAPPER_EXTENSION = kext;
 			};
-			name = Default;
+			name = Release;
+		};
+		1DEB91C808733DAC0010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		1DEB91C908733DAC0010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		051434110D45D8DD00400B7B /* Build configuration list for PBXProject "pt_deny_attach" */ = {
+		1DEB91C308733DAC0010E9CD /* Build configuration list for PBXNativeTarget "pt_deny_attach" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0514340B0D45D8DD00400B7B /* Development */,
-				0514340C0D45D8DD00400B7B /* Deployment */,
-				0514340D0D45D8DD00400B7B /* Default */,
+				1DEB91C408733DAC0010E9CD /* Debug */,
+				1DEB91C508733DAC0010E9CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
+			defaultConfigurationName = Release;
 		};
-		051434120D45D8DD00400B7B /* Build configuration list for PBXNativeTarget "pt_deny_attach" */ = {
+		1DEB91C708733DAC0010E9CD /* Build configuration list for PBXProject "pt_deny_attach" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0514340E0D45D8DD00400B7B /* Development */,
-				0514340F0D45D8DD00400B7B /* Deployment */,
-				051434100D45D8DD00400B7B /* Default */,
+				1DEB91C808733DAC0010E9CD /* Debug */,
+				1DEB91C908733DAC0010E9CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Default;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

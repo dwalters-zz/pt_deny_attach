@@ -24,8 +24,20 @@
 #include <stdint.h>
 #include "structures.h"
 
+/* This value is for OSX 10.6.[12].  The latest _nsysent offset can be found
+ * via:
+ *
+ *   nm -g /mach_kernel | grep _nsysent
+ *
+ * Due to a bug in the kext loading code, it's not currently possible
+ * to link against com.apple.kernel to let the linker locate this.
+ *
+ * http://packetstorm.foofus.com/papers/attack/osx1061sysent.txt
+ */
+#define _NSYSENT_OSX_10_6_1_  0x00831870
+
 static struct sysent *_sysent;
-extern int nsysent;
+static int *_nsysent = (int *)_NSYSENT_OSX_10_6_1_;
 
 typedef int	ptrace_func_t (struct proc *, struct ptrace_args *, int *);
 static ptrace_func_t *real_ptrace;
@@ -51,15 +63,10 @@ static struct sysent *find_sysent () {
 	unsigned int table_size;
 	struct sysent *table;
 
-	table_size = sizeof(struct sysent) * nsysent;
-	table = (struct sysent *) ( ((char *) &nsysent) + sizeof(nsysent) );
+	table_size = sizeof(struct sysent) * *(_nsysent);
+	table = (struct sysent *) ( ((char *) _nsysent) - table_size );
 
-#if __i386__
-	/* For reasons unknown, the table is offset by an additional 28 bytes on my i386 system */
-	table = (struct sysent *) ( ((uint8_t *) table) + 28);
-#endif
-
-	printf("[ptrace] Found nsysent at %p (count %d), calculated sysent location %p.\n", &nsysent, nsysent, table);
+	printf("[ptrace] Found nsysent at %p (count %d), calculated sysent location %p.\n", _nsysent, *_nsysent, table);
 
 	/* Sanity check */
 	printf("[ptrace] Sanity check %d %d %d %d %d %d: ",
