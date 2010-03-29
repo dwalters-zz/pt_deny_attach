@@ -24,7 +24,7 @@
 #include <stdint.h>
 #include "structures.h"
 
-/* This value is for OSX 10.6.[12].  The latest _nsysent offset can be found
+/* This value is for OSX 10.6.3.  The exact _nsysent offset can be found
  * via:
  *
  *   nm -g /mach_kernel | grep _nsysent
@@ -34,7 +34,7 @@
  *
  * http://packetstorm.foofus.com/papers/attack/osx1061sysent.txt
  */
-#define _NSYSENT_OSX_10_6_1_  0x00831870
+#define _NSYSENT_OSX_10_6_1_  0x00831730
 
 static struct sysent *_sysent;
 static int *_nsysent = (int *)_NSYSENT_OSX_10_6_1_;
