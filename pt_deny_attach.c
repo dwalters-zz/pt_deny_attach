@@ -24,17 +24,17 @@
 #include <stdint.h>
 #include "structures.h"
 
-/* This value is for OSX 10.6.3.  The exact _nsysent offset can be found
+/* This value is for OSX 10.6.5.  The exact _nsysent offset can be found
  * via:
  *
- *   nm -g /mach_kernel | grep _nsysent
+ *   nm -arch i386 -g /mach_kernel | grep _nsysent
  *
  * Due to a bug in the kext loading code, it's not currently possible
  * to link against com.apple.kernel to let the linker locate this.
  *
  * http://packetstorm.foofus.com/papers/attack/osx1061sysent.txt
  */
-#define _NSYSENT_OSX_10_6_1_  0x00831730
+#define _NSYSENT_OSX_10_6_1_  0x00831790
 
 static struct sysent *_sysent;
 static int *_nsysent = (int *)_NSYSENT_OSX_10_6_1_;
