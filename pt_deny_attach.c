@@ -33,7 +33,7 @@
  * to link against com.apple.kernel to let the linker locate this.
  *
  * http://packetstorm.foofus.com/papers/attack/osx1061sysent.txt
- */<#macro#>
+ */
 #define _NSYSENT_OSX_10_7_1_  0xffffff8000846eb8
 
 static struct sysent *_sysent;
